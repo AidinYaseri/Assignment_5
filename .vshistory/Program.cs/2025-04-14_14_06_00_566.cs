@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace Assignment_5
 {
@@ -209,27 +208,10 @@ namespace Assignment_5
         {
             cards = new List<Card>();
         }
-        public Deck(bool hasJoker)
+        public Deck(bool containsJoker)
         {
             cards = new List<Card>();
-            DeckGenerator();
-            if (hasJoker)
-            {
-                cards.Add(new Card("red"));
-                cards.Add(new Card("black"));
-            }
 
-        }
-        public Deck(int numberOfDecks)
-        {
-            cards = new List<Card>();
-            for (int decks = 0; decks > numberOfDecks; decks++)
-            {
-                    DeckGenerator();
-            }
-        }
-        private void DeckGenerator()
-        {
             string[] suits = { "clubs", "diamonds", "hearts", "spades" };
             string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
 
@@ -240,7 +222,15 @@ namespace Assignment_5
                     cards.Add(new Card(rank, suit));
                 }
             }
+
+            if (containsJoker)
+            {
+                cards.Add(new Card("red"));
+                cards.Add(new Card("black"));
+            }
+
         }
+        public Deck()
     }
 
 

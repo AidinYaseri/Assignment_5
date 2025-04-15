@@ -212,7 +212,18 @@ namespace Assignment_5
         public Deck(bool hasJoker)
         {
             cards = new List<Card>();
-            DeckGenerator();
+
+            string[] suits = { "clubs", "diamonds", "hearts", "spades" };
+            string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
+
+            foreach (string suit in suits)
+            {
+                foreach (string rank in ranks)
+                {
+                    cards.Add(new Card(rank, suit));
+                }
+            }
+
             if (hasJoker)
             {
                 cards.Add(new Card("red"));
@@ -222,13 +233,31 @@ namespace Assignment_5
         }
         public Deck(int numberOfDecks)
         {
-            cards = new List<Card>();
-            for (int decks = 0; decks > numberOfDecks; decks++)
+            for (int decks = 0; decks >= numberOfDecks; decks++)
             {
-                    DeckGenerator();
+                {
+                    string[] suits = { "clubs", "diamonds", "hearts", "spades" };
+                    string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
+
+                    foreach (string suit in suits)
+                    {
+                        foreach (string rank in ranks)
+                        {
+                            cards.Add(new Card(rank, suit));
+                        }
+                    }
+
+                    if (hasJoker)
+                    {
+                        cards.Add(new Card("red"));
+                        cards.Add(new Card("black"));
+                    }
+
+                    
+                }
             }
         }
-        private void DeckGenerator()
+        private List<Card> DeckGenerator()
         {
             string[] suits = { "clubs", "diamonds", "hearts", "spades" };
             string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
@@ -239,6 +268,12 @@ namespace Assignment_5
                 {
                     cards.Add(new Card(rank, suit));
                 }
+            }
+
+            if (hasJoker)
+            {
+                cards.Add(new Card("red"));
+                cards.Add(new Card("black"));
             }
         }
     }

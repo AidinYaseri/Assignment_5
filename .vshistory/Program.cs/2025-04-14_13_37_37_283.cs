@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace Assignment_5
 {
@@ -11,7 +10,7 @@ namespace Assignment_5
         private int _cardNumber;
 
         // Making setters for the relevant fields
-        public string Rank
+        public string rank
         {
             get
             {
@@ -22,7 +21,7 @@ namespace Assignment_5
 
             }
         }
-        string Suit
+        string suit
         {
             get
             {
@@ -33,7 +32,7 @@ namespace Assignment_5
 
             }
         }
-        public string Color
+        public string color
         {
             get
             {
@@ -45,21 +44,21 @@ namespace Assignment_5
             }
         }
 
-        public Card(string rank, string suit)
+        Card(string rank, string suit)
         {
             // turning rank and suit to lower case
-            this.Rank = rank.ToLower();
-            this.Suit = suit.ToLower();
+            this.rank = rank.ToLower();
+            this.suit = suit.ToLower();
 
             // verifing that the inputs are valid 
             if (suit == "hearts" || suit == "diamonds")
             {
-                Color = "red";
+                color = "red";
 
             }
             else if (suit == "spades" || suit == "clubs")
             {
-                Color = "black";
+                color = "black";
             }
             else
                 throw new Exception("The suit provided in not one in a deck of cards"); // If not correct, throw exception
@@ -70,7 +69,7 @@ namespace Assignment_5
             }
 
         }
-        public Card(string color)
+        Card(string color)
         {
             // turning the color to lowecase
             color = color.ToLower();
@@ -80,11 +79,11 @@ namespace Assignment_5
                 throw new Exception("Joker must be either black or red"); // If not correct, throw exception
             }
             // setting correct card info
-            Rank = "joker";
-            this.Color = color;
-            Suit = null;
+            rank = "joker";
+            this.color = color;
+            suit = null;
         }
-        public Card(int cardNum)
+        Card(int cardNum)
         {
             // validating to see if number is in the right bound
             if (cardNum < 1 || cardNum > 54)
@@ -94,15 +93,15 @@ namespace Assignment_5
             // looking for joker and setting fields accordantly
             if (cardNum == 53)
             {
-                Rank = "joker";
-                Suit = null;
-                Color = "red";
+                rank = "joker";
+                suit = null;
+                color = "red";
             }
             else if (cardNum == 54)
             {
-                Rank = "joker";
-                Suit = null;
-                Color = "black";
+                rank = "joker";
+                suit = null;
+                color = "black";
             }
             else
             {
@@ -113,15 +112,15 @@ namespace Assignment_5
                 int suitIndex = (cardNum - 1) / 13;
                 int rankIndex = (cardNum - 1) % 13; //using modulos
 
-                Rank = ranks[rankIndex];
-                Suit = suits[suitIndex];
+                rank = ranks[rankIndex];
+                suit = suits[suitIndex];
                 // determining the color
-                if (Rank == "hearts" || Rank == "diamonds")
+                if (rank == "hearts" || rank == "diamonds")
                 {
-                    Color = "red";
+                    color = "red";
                 }
                 else
-                    Color = "black";
+                    color = "black";
 
             }
             _cardNumber = cardNum;
@@ -132,9 +131,9 @@ namespace Assignment_5
             Console.OutputEncoding = Encoding.UTF8;
 
             // checking and returning for a joker
-            if (Rank == "joker")
+            if (rank == "joker")
             {
-                if (Suit == "red")
+                if (suit == "red")
                     return ("Red Joker");
                 else
                     return ("Black Joker");
@@ -142,7 +141,7 @@ namespace Assignment_5
 
             string symbolSuit = "";
             // switching string suits to symbols
-            switch (Suit)
+            switch (suit)
             {
                 case "clubs":
                     symbolSuit = "♣";
@@ -158,7 +157,7 @@ namespace Assignment_5
                     break;
             }
             // returning the card
-            return (Rank + symbolSuit);
+            return (rank + symbolSuit);
         }
 
         public override bool Equals(object otherCard)
@@ -170,7 +169,7 @@ namespace Assignment_5
             if (otherCard is Card newCard)
             {
                 //checking for equality between the two cards
-                if (this.Suit == newCard.Suit && this.Rank == newCard.Rank && this.Color == newCard.Color)
+                if (this.suit == newCard.suit && this.rank == newCard.rank && this.color == newCard.color)
                 {
                     return true; // returning true if all characters are a match
                 }
@@ -183,9 +182,9 @@ namespace Assignment_5
         {
             int cardHash = 17; // starting by a common prime number
             // combining the hashes
-            cardHash = cardHash * 31 + (Rank != null ? Rank.GetHashCode() : 0);
-            cardHash = cardHash * 31 + (Suit != null ? Suit.GetHashCode() : 0);
-            cardHash = cardHash * 31 + (Color != null ? Color.GetHashCode() : 0);
+            cardHash = cardHash * 31 + (rank != null ? rank.GetHashCode() : 0);
+            cardHash = cardHash * 31 + (suit != null ? suit.GetHashCode() : 0);
+            cardHash = cardHash * 31 + (color != null ? color.GetHashCode() : 0);
 
             return cardHash; // returning the final hash
 
@@ -196,51 +195,8 @@ namespace Assignment_5
     public class Deck
     {
 
-        private List<Card> cards;
-        public int CardsLeft
-        {
-            set
-            {
-                cards.Count();
-            }
-        }
-
-        public Deck()
-        {
-            cards = new List<Card>();
-        }
-        public Deck(bool hasJoker)
-        {
-            cards = new List<Card>();
-            DeckGenerator();
-            if (hasJoker)
-            {
-                cards.Add(new Card("red"));
-                cards.Add(new Card("black"));
-            }
-
-        }
-        public Deck(int numberOfDecks)
-        {
-            cards = new List<Card>();
-            for (int decks = 0; decks > numberOfDecks; decks++)
-            {
-                    DeckGenerator();
-            }
-        }
-        private void DeckGenerator()
-        {
-            string[] suits = { "clubs", "diamonds", "hearts", "spades" };
-            string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
-
-            foreach (string suit in suits)
-            {
-                foreach (string rank in ranks)
-                {
-                    cards.Add(new Card(rank, suit));
-                }
-            }
-        }
+        private List<Card> _cards;
+        public int () {
     }
 
 

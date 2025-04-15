@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text;
+﻿using System.Text;
 
 namespace Assignment_5
 {
@@ -45,7 +44,7 @@ namespace Assignment_5
             }
         }
 
-        public Card(string rank, string suit)
+        Card(string rank, string suit)
         {
             // turning rank and suit to lower case
             this.Rank = rank.ToLower();
@@ -70,7 +69,7 @@ namespace Assignment_5
             }
 
         }
-        public Card(string color)
+        Card(string color)
         {
             // turning the color to lowecase
             color = color.ToLower();
@@ -84,7 +83,7 @@ namespace Assignment_5
             this.Color = color;
             Suit = null;
         }
-        public Card(int cardNum)
+        Card(int cardNum)
         {
             // validating to see if number is in the right bound
             if (cardNum < 1 || cardNum > 54)
@@ -208,38 +207,6 @@ namespace Assignment_5
         public Deck()
         {
             cards = new List<Card>();
-        }
-        public Deck(bool hasJoker)
-        {
-            cards = new List<Card>();
-            DeckGenerator();
-            if (hasJoker)
-            {
-                cards.Add(new Card("red"));
-                cards.Add(new Card("black"));
-            }
-
-        }
-        public Deck(int numberOfDecks)
-        {
-            cards = new List<Card>();
-            for (int decks = 0; decks > numberOfDecks; decks++)
-            {
-                    DeckGenerator();
-            }
-        }
-        private void DeckGenerator()
-        {
-            string[] suits = { "clubs", "diamonds", "hearts", "spades" };
-            string[] ranks = { "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king" };
-
-            foreach (string suit in suits)
-            {
-                foreach (string rank in ranks)
-                {
-                    cards.Add(new Card(rank, suit));
-                }
-            }
         }
     }
 
