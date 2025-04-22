@@ -1,0 +1,14 @@
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\bin\Debug\net8.0\Assignment_5.exe
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\bin\Debug\net8.0\Assignment_5.deps.json
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\bin\Debug\net8.0\Assignment_5.runtimeconfig.json
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\bin\Debug\net8.0\Assignment_5.dll
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\bin\Debug\net8.0\Assignment_5.pdb
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.AssemblyInfoInputs.cache
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.AssemblyInfo.cs
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.csproj.CoreCompileInputs.cache
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.dll
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\refint\Assignment_5.dll
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.pdb
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\Assignment_5.genruntimeconfig.cache
+C:\Users\aidin\OneDrive\Documents\OneDrive - John Abbott College\2nd semester\Programming 2\Assignments\Assignment 5\Assignment-5\Assignment_5\obj\Debug\net8.0\ref\Assignment_5.dll
